@@ -1,7 +1,7 @@
 import ecommerce_shop from "../assets/projects/ecommerce-shop.png";
 import nc_news from "../assets/projects/nc-news.png";
 import weather_app from "../assets/projects/weather_app.png";
-import safer_places from "../assets/projects/safer_places.png";
+import safer_places from "../assets/projects/safer-places.png";
 import redmapp from "../assets/projects/redmapp.png";
 
 export const HERO_CONTENT = `Adept at combining technical expertise with strong interpersonal and transferable skills, including collaboration, problem-solving, and effective communication. Recognized for exceptional analytical skills, a collaborative approach, and a passion for continuous improvement and learning.`;
