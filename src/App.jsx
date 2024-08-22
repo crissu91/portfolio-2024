@@ -1,4 +1,5 @@
 import NavBar from "./components/NavBar";
+import Hero from "./components/Hero";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
 
       <div className="container mx-auto px-8">
         <NavBar />
+        <Hero />
       </div>
     </div>
   );
