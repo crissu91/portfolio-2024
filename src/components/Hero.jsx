@@ -18,7 +18,7 @@ export default function Hero() {
               Full Stack Developer
             </span>
 
-            <p className="my-2 md:py-6 max-w-xl font-light tracking-tighter text-lg text-balance">
+            <p className="my-2 md:py-6 max-w-xl text-lg text-balance">
               {HERO_CONTENT}
             </p>
           </div>
