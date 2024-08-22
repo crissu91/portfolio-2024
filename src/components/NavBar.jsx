@@ -20,8 +20,13 @@ export default function NavBar() {
       </div>
 
       <div className="m-8 flex items-center gap-4 justify-center text-2xl">
-        <FaLinkedin />
-        <FaGithub />
+        <a href="https://www.linkedin.com/in/cristinastefan91/" target="_blank">
+          <FaLinkedin />
+        </a>
+
+        <a href="https://github.com/crissu91" target="_blank">
+          <FaGithub />
+        </a>
       </div>
     </nav>
   );
