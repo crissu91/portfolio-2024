@@ -8,7 +8,7 @@ import { TbBrandCss3 } from "react-icons/tb";
 
 export default function TechStack() {
   return (
-    <div className="border-b border-neutral-800 py-10 md:py-20 space-y-10">
+    <div className="border-b border-neutral-800 py-10 md:py-20 space-y-10 md:space-y-20">
       <h2 className="text-center text-4xl ">Tech Stack</h2>
 
       <div className="flex flex-wrap items-center justify-center gap-3 md:gap-6">
