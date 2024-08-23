@@ -1,6 +1,7 @@
 import React from "react";
 import logo from "../assets/cristina-logo.png";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
+import { MdOutlineAlternateEmail } from "react-icons/md";
 
 export default function NavBar() {
   return (
@@ -20,6 +21,9 @@ export default function NavBar() {
 
         <a href="https://github.com/crissu91" target="_blank">
           <FaGithub />
+        </a>
+        <a href="mailto:cristinaf.stefan@gmail.com">
+          <MdOutlineAlternateEmail />
         </a>
       </div>
     </nav>
