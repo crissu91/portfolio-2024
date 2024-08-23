@@ -5,7 +5,7 @@ import profile_image from "../assets/cristina-profile.jpg";
 
 export default function Hero() {
   return (
-    <div className="border-b border-neutral-900 pb-10 lg:mb-35">
+    <div className="border-b border-neutral-800 pb-10 md:pb-20 lg:mb-35">
       <div className="flex flex-wrap">
         <div className="w-full lg:w-1/2">
           <div className="flex flex-col items-center gap-4">

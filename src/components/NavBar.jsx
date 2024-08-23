@@ -4,7 +4,7 @@ import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function NavBar() {
   return (
-    <nav className="mb-28 flex items-center justify-between py-6">
+    <nav className="mb-5 lg:mb-28 flex items-center justify-between py-6">
       <div className="flex flex-shrink-0 items-center">
         <img
           src={logo}
