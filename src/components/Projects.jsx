@@ -1,14 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import { PROJECTS } from "../constants";
 
 export default function Projects() {
+  const [showMore, setShowMore] = useState(false);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+
+    setShowMore(!showMore);
+  };
+
   return (
-    <div className="border-b border-neutral-800 py-10 md:py-20 space-y-10">
+    <div className="border-b border-neutral-800 py-10 md:py-20 space-y-10 md:space-y-20 flex flex-col items-center justify-center">
       <h2 className="text-center text-4xl ">Projects</h2>
 
       <ul className="flex flex-col space-y-16">
         {PROJECTS.map((project, index) => (
-          <li key={index} className="grid md:grid-cols-3 gap-8 lg:gap-16">
+          <li
+            key={index}
+            className={`grid md:grid-cols-3 gap-8 lg:gap-16 ${
+              index > 2 && !showMore ? "hidden" : null
+            }`}
+          >
             <div className="group md:col-span-1 ">
               <img
                 src={project.image}
@@ -52,6 +65,13 @@ export default function Projects() {
           </li>
         ))}
       </ul>
+
+      <button
+        onClick={handleClick}
+        className="block mt-3 lg:mt-6 w-fit bg-gradient-to-r from-yellow-200 via-slate-300 to-yellow-500 rounded-full px-5 py-1 text-yellow-950 font-semibold hover:bg-gradient-to-l hover:scale-105 transition-all ease-in-out duration-700"
+      >
+        {showMore ? "Show less" : "Show more"}
+      </button>
     </div>
   );
 }
