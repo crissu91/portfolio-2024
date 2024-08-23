@@ -1,28 +1,49 @@
 import React from "react";
 import aboutImg from "../assets/about.jpg";
 import { ABOUT_TEXT } from "../constants";
+import { motion } from "framer-motion";
 
 export default function About() {
   return (
     <div className="border-b border-neutral-800 py-10 md:py-20 space-y-10 md:space-y-20">
-      <h2 className="text-center text-4xl ">About me</h2>
+      <motion.h2
+        whileInView={{ opacity: 1, x: 0 }}
+        initial={{ x: -200, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ duration: 1, delay: 2 }}
+        className="text-center text-4xl "
+      >
+        About me
+      </motion.h2>
 
       <div className="flex flex-wrap">
         <div className="w-full lg:w-1/2 lg:p-8">
-          <div className="group flex items-center justify-center">
+          <motion.div
+            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ x: -200, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ duration: 1, delay: 2 }}
+            className="group flex items-center justify-center"
+          >
             <img
               src={aboutImg}
               alt="Cristina Stefan in a white top working on the computer."
-              className="rounded-tl-[40px] rounded-br-[40px] scale-105 opacity-80 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-700 overflow-hidden"
+              className="aspect-square object-cover rounded-tl-[40px] rounded-br-[40px] scale-105 opacity-80 group-hover:opacity-100 group-hover:scale-100 transition-all ease-in-out duration-700 overflow-hidden"
             />
-          </div>
+          </motion.div>
         </div>
 
-        <div className="w-full lg:w-1/2 py-8 lg:px-8 my-auto">
+        <motion.div
+          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ x: 200, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 1, delay: 2 }}
+          className="w-full lg:w-1/2 py-8 lg:px-8 my-auto"
+        >
           <p className="text-lg flex justify-center lg:justify-start text-balance">
             {ABOUT_TEXT}
           </p>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
