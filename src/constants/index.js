@@ -65,7 +65,3 @@ export const PROJECTS = [
     technologies: ["HTML", "TailwindCSS", "React", "Unicons"],
   },
 ];
-
-export const CONTACT = {
-  email: "cristinaf.stefan@gmail.com",
-};
