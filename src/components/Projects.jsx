@@ -60,7 +60,7 @@ export default function Projects({ isVisible }) {
                 </h4>
               ) : null}
 
-              <p className="text-neutral-400 max-w-[28em] mt-1 lg:mt-2">
+              <p className="text-lg max-w-[28em] mt-1 lg:mt-2">
                 {project.description}
               </p>
 
