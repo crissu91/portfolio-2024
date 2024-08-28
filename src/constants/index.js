@@ -4,6 +4,7 @@ import weather_app from "../assets/projects/weather_app.png";
 import safer_places from "../assets/projects/safer-places.png";
 import redmapp from "../assets/projects/redmapp.png";
 import gttg from "../assets/projects/gttg.png";
+import color_contrast from "../assets/projects/colour-contrast.png";
 
 export const HERO_CONTENT = `Adept at combining technical expertise with strong interpersonal and transferable skills, including collaboration, problem-solving, and effective communication. Recognized for exceptional analytical skills, a collaborative approach, and a passion for continuous improvement and learning.`;
 
@@ -38,6 +39,15 @@ export const PROJECTS = [
     description:
       "A platform for a gaming event supporting better mental health for all. In partnership with Leeds Mind.",
     technologies: ["TailwindCSS", "Vue.js", "PHP", "Laravel", "Statamic"],
+  },
+  {
+    title: "Color Contrast Tool",
+    image: color_contrast,
+    associated_with: "Few and Far",
+    link: "https://www.fewandfar.co.uk/charity-hub/colour-contrast",
+    description:
+      "A color contrast checker tool to compare and check if the contrast ratio between text (foreground) and its background passes to a WCAG level of AA or AAA standard.",
+    technologies: ["TailwindCSS", "Vue.js"],
   },
   {
     title: "News Website",
