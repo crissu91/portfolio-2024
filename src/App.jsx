@@ -1,9 +1,12 @@
-import NavBar from "./components/NavBar";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import TechStack from "./components/TechStack";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
+import React, { lazy, Suspense, useState } from "react";
+import LazyLoad from "./components/LazyLoad";
+
+const NavBar = lazy(() => import("./components/NavBar"));
+const Hero = lazy(() => import("./components/Hero"));
+const About = lazy(() => import("./components/About"));
+const TechStack = lazy(() => import("./components/TechStack"));
+const Projects = lazy(() => import("./components/Projects"));
+const Contact = lazy(() => import("./components/Contact"));
 
 function App() {
   return (
@@ -13,12 +16,29 @@ function App() {
       </div>
 
       <div className="container mx-auto px-10 md:px-20">
-        <NavBar />
-        <Hero />
-        <About />
-        <TechStack />
-        <Projects />
-        <Contact />
+        <Suspense fallback={<div>Loading...</div>}>
+          <NavBar />
+
+          <LazyLoad>
+            <Hero />
+          </LazyLoad>
+
+          <LazyLoad>
+            <About />
+          </LazyLoad>
+
+          <LazyLoad>
+            <TechStack />
+          </LazyLoad>
+
+          <LazyLoad>
+            <Projects />
+          </LazyLoad>
+
+          <LazyLoad>
+            <Contact />
+          </LazyLoad>
+        </Suspense>
       </div>
     </div>
   );
