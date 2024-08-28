@@ -13,7 +13,7 @@ const container = (delay) => ({
   },
 });
 
-export default function Hero() {
+export default function Hero({ isVisible }) {
   return (
     <div className="border-b border-neutral-800 pb-10 md:pb-20 lg:mb-35">
       <div className="flex flex-wrap">
@@ -22,7 +22,7 @@ export default function Hero() {
             <motion.img
               variants={container(1)}
               initial="hidden"
-              animate="visible"
+              animate={isVisible ? "visible" : "hidden"}
               src={name}
               alt="Cristina Stefan name printed in gold"
               className="w-[500px] h-auto image-cover overflow-visible object-cover"
@@ -31,7 +31,7 @@ export default function Hero() {
             <motion.span
               variants={container(1.5)}
               initial="hidden"
-              animate="visible"
+              animate={isVisible ? "visible" : "hidden"}
               className="bg-gradient-to-r from-yellow-200 via-slate-300 to-yellow-500 bg-clip-text text-2xl md:text-4xl text-transparent tracking-tight"
             >
               Full Stack Developer
@@ -40,7 +40,7 @@ export default function Hero() {
             <motion.p
               variants={container(2)}
               initial="hidden"
-              animate="visible"
+              animate={isVisible ? "visible" : "hidden"}
               className="my-2 md:py-6 max-w-xl text-lg text-balance"
             >
               {HERO_CONTENT}
@@ -51,7 +51,7 @@ export default function Hero() {
         <div className="w-full lg:w-1/2 lg:px-8 mt-5 md:mt-0">
           <motion.img
             initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            animate={isVisible ? { x: 0, opacity: 1 } : { x: 100, opacity: 0 }}
             transition={{ duration: 1, delay: 1 }}
             src={profile_image}
             alt="Cristina Stefan in a blue shirt smiling at camera."

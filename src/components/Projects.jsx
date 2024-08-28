@@ -2,21 +2,18 @@ import React, { useState } from "react";
 import { PROJECTS } from "../constants";
 import { motion } from "framer-motion";
 
-export default function Projects() {
+export default function Projects({ isVisible }) {
   const [showMore, setShowMore] = useState(false);
 
   const handleClick = (e) => {
     e.preventDefault();
-
     setShowMore(!showMore);
   };
 
   return (
     <div className="border-b border-neutral-800 py-10 md:py-20 space-y-10 md:space-y-20 flex flex-col items-center justify-center">
       <motion.h2
-        whileInView={{ opacity: 1, x: 0 }}
-        initial={{ x: -200, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
+        animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -200 }}
         transition={{ duration: 1 }}
         className="text-center text-4xl "
       >
@@ -28,15 +25,17 @@ export default function Projects() {
           <li
             key={index}
             className={`grid md:grid-cols-3 gap-8 lg:gap-16 ${
-              index > 2 && !showMore ? "hidden" : null
+              index > 2 && !showMore
+                ? "hidden opacity-0"
+                : "opacity-100 transition-opacity duration-500 ease-linear"
             }`}
           >
             <motion.div
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ x: -200, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
+              animate={
+                isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: -200 }
+              }
               transition={{ duration: 1 }}
-              className="group md:col-span-1 "
+              className="group md:col-span-1"
             >
               <img
                 src={project.image}
@@ -46,9 +45,9 @@ export default function Projects() {
             </motion.div>
 
             <motion.div
-              whileInView={{ opacity: 1, x: 0 }}
-              initial={{ x: 200, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
+              animate={
+                isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }
+              }
               transition={{ duration: 1 }}
               className="md:col-span-2"
             >
@@ -57,7 +56,7 @@ export default function Projects() {
               {project.associated_with ? (
                 <h4 className="text-md mt-3 lg:mt-6">
                   <span className="text-yellow-600">Associated with: </span>
-                  {project?.associated_with}
+                  {project.associated_with}
                 </h4>
               ) : null}
 
@@ -79,6 +78,7 @@ export default function Projects() {
               <a
                 className="border border-neutral-600 mt-3 lg:mt-6 block w-fit bg-gradient-to-r from-yellow-200 via-slate-300 to-yellow-500 rounded-full px-[12px] py-[3px] bg-clip-text text-transparent hover:text-yellow-950 hover:bg-clip-border font-semibold hover:bg-gradient-to-l hover:scale-110 transition-all ease-in-out duration-700"
                 href={project.link}
+                target="_blank"
               >
                 Visit Website
               </a>
@@ -87,16 +87,18 @@ export default function Projects() {
         ))}
       </ul>
 
-      <motion.button
-        whileInView={{ opacity: 1, x: 0 }}
-        initial={{ x: 200, opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
+      <motion.div
+        animate={isVisible ? { opacity: 1, x: 0 } : { opacity: 0, x: 200 }}
         transition={{ duration: 1 }}
-        onClick={handleClick}
-        className="block mt-3 lg:mt-6 w-fit bg-gradient-to-r from-yellow-200 via-slate-300 to-yellow-500 rounded-full px-5 py-1 text-yellow-950 font-semibold hover:bg-gradient-to-l hover:scale-110 transition-all ease-in-out duration-700"
+        className="group block mt-3 lg:mt-6"
       >
-        {showMore ? "Show less" : "Show more"}
-      </motion.button>
+        <button
+          onClick={handleClick}
+          className="w-fit bg-gradient-to-r from-yellow-200 via-slate-300 to-yellow-500 rounded-full px-5 py-1 text-yellow-950 font-semibold group-hover:bg-gradient-to-l group-hover:scale-110 transition-all ease-in-out duration-700"
+        >
+          {showMore ? "Show less" : "Show more"}
+        </button>
+      </motion.div>
     </div>
   );
 }
