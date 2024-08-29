@@ -21,7 +21,7 @@ export default function Contact({ isVisible }) {
         initial={{ x: 400, opacity: 0 }}
         animate={isVisible ? { x: 0, opacity: 1 } : { x: 400, opacity: 0 }}
         transition={{ duration: 1 }}
-        className="text-neutral-400 text-xl max-w-[22em] text-balance"
+        className="text-neutral-400 text-xl md:max-w-[22em] text-balance"
       >
         I'm excited to connect with you for project collaborations, job offers,
         or any other exciting opportunities.
