@@ -10,7 +10,7 @@ export default function NavBar() {
         <img
           src={logo}
           alt="Cristina Stefan name printed in gold"
-          className="w-fit h-[50px] md:h-[75px] transition-opacity"
+          className="w-auto max-h-[50px] md:max-h-[75px] transition-opacity"
         />
       </div>
 
