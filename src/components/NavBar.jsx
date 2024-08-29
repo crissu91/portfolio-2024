@@ -14,7 +14,7 @@ export default function NavBar() {
         />
       </div>
 
-      <div className="m-8 flex items-center gap-4 justify-center text-2xl">
+      <div className="my-8 flex items-end gap-4 justify-center text-2xl">
         <a href="https://www.linkedin.com/in/cristinastefan91/" target="_blank">
           <FaLinkedin />
         </a>
